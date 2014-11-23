@@ -1,0 +1,59 @@
+##CODEBOOK
+
+This CODEBOOK, describes the variables used in each step in the script, run_analysis.R.
+
+##Step1. Reading the files from the folders named "train" and "test" into the following variables:
+
+subject_train.txt into subject_train
+subject_test: reading subject_test.txt 
+x_train: reading X_train.txt 
+x_test: reading X_test.txt 
+y_train: reading y_train.txt 
+y_test: reading y_test.txt
+features : reading features.txt
+
+data_x: binding rows of x_train and x_test
+data_sub :binding rows of subject_train and subject_test
+data_y: binding rows y_train and y_test
+feat: binding the features and character "subject" and "activity:
+
+data: the dataset after merging feat, data_x,data_y and data_sub
+
+colnames(data): adds the 2nd row in the transpose of the feautues dataset as the variable names to the final dataset "data" after merging.
+
+##Step2. Extracting the columns with the meana nd standard deviation measurements
+
+m: gives the colums which contain the mean and standard deviation mesurements
+dat: gives the subset of the "data" with the columns in m
+
+
+##Step3. Adding a column with a meaningful name
+
+dat:binds a new column  called "ActivityName' with default values as ActivityName
+
+activity: is a list of activity names corresponding to the values in the column "Activity"
+We run a for loop to assign, the Activity Names based on the corresponding value in the activity column.
+
+##Step4. calculating the average 
+average: calculates the average value for each column based on each Subject and each Activity
+
+On using a the aggregate function we , two columns called "group.1" grouped by Activity & "group.2" grouped by subject
+
+we remove the columns named "Activity " and "Subject" which existed in the original dataset  and rename the columns "group.1" as "Activity" and "group.2" as "Subject"
+
+##Step5 Melting dataset
+
+datm: melts/ transforms the dataset in the "average" from wide to  a long dataset in "datm"
+
+The long form of data set hase the following columns:
+
+"Activity" ;"Subject" ;"variable" ;"value"
+
+We change the values in the "Activity " column to its correspong names to make the final dataset look more meaningful.
+
+
+
+
+
+
+
