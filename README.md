@@ -9,6 +9,8 @@ X_test.txt into x_test
 y_train.txt into y_train
 y_test.txt into y_test
 features.txt into features
+
+
 -Merging the files to create a data frame
 data_x : merging the datasets x_train and x_test 
 data_y : merging the datasets x_train and x_test
